@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1772960527019,
+      "tag": "0000_happy_star_brand",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772960852617,
+      "tag": "0001_rapid_ozymandias",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1772983822800,
+      "tag": "0002_lively_hawkeye",
+      "breakpoints": true
+    }
+  ]
+}
