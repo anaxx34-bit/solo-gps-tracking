@@ -14,10 +14,10 @@ export default function DevLogin() {
   const [selectedRole, setSelectedRole] = useState<"parent" | "driver" | "admin">("parent");
 
   const devCredentials = {
-    parent: { email: "parent@test.com", password: "parent123" },
-    driver: { email: "driver@test.com", password: "driver123" },
-    admin: { email: "admin@test.com", password: "admin123" },
-  };
+  parent: { email: "parent@test.com", password: "dev-login" },
+  driver: { email: "driver@test.com", password: "dev-login" },
+  admin: { email: "admin@test.com", password: "dev-login" },
+};
 
   const handleQuickLogin = async (role: "parent" | "driver" | "admin") => {
     const cred = devCredentials[role];
