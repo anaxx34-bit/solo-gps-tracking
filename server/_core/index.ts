@@ -1,4 +1,3 @@
-import { seedDemoUsers } from "./seed";
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
@@ -64,7 +63,6 @@ async function startServer() {
   server.listen(port, async () => {
   console.log(`Server running on http://localhost:${port}/`);
 
-  await seedDemoUsers();
 });
 }
 
