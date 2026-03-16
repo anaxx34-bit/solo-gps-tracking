@@ -1,3 +1,4 @@
+import { seedDemoUsers } from "./seed";
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
@@ -60,9 +61,11 @@ async function startServer() {
     console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
   }
 
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}/`);
-  });
+  server.listen(port, async () => {
+  console.log(`Server running on http://localhost:${port}/`);
+
+  await seedDemoUsers();
+});
 }
 
 startServer().catch(console.error);
