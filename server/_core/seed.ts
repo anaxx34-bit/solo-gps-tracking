@@ -1,5 +1,4 @@
-
- import mysql from "mysql2/promise";
+import mysql from "mysql2/promise";
 
 export async function seedDemoUsers() {
   if (!process.env.DATABASE_URL) return;
