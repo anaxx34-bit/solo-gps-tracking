@@ -6,7 +6,7 @@ export async function seedDemoUsers() {
   const connection = await mysql.createConnection(process.env.DATABASE_URL);
 
   await connection.execute(`
-    INSERT IGNORE INTO users (name,email,loginMethod,role,userType)
+    INSERT IGNORE INTO users (name,email,login_method,role,user_type)
     VALUES
     ('Parent','parent@test.com','dev-login','parent','parent'),
     ('Driver','driver@test.com','dev-login','driver','driver'),
