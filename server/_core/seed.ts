@@ -1,7 +1,12 @@
 import mysql from "mysql2/promise";
 
 export async function seedDemoUsers() {
-  const connection = await mysql.createConnection(process.env.DATABASE_URL!);
+  if (!process.env.DATABASE_URL) {
+    console.log("DATABASE_URL not set, skipping seed");
+    return;
+  }
+
+  const connection = await mysql.createConnection(process.env.DATABASE_URL);
 
   await connection.execute(`
     CREATE TABLE IF NOT EXISTS users (
