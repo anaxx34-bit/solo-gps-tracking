@@ -38,6 +38,7 @@ export default function DevLogin() {
       const response = await fetch("/api/dev-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email: emailVal, password: passwordVal }),
       });
 
