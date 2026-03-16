@@ -1,28 +1,17 @@
-import mysql from "mysql2/promise";
+
+ import mysql from "mysql2/promise";
 
 export async function seedDemoUsers() {
-  if (!process.env.DATABASE_URL) {
-    console.log("DATABASE_URL not set, skipping seed");
-    return;
-  }
+  if (!process.env.DATABASE_URL) return;
 
   const connection = await mysql.createConnection(process.env.DATABASE_URL);
 
   await connection.execute(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      name VARCHAR(255),
-      email VARCHAR(255) UNIQUE,
-      password VARCHAR(255),
-      role VARCHAR(50)
-    )
-  `);
-
-  await connection.execute(`
-    INSERT IGNORE INTO users (name,email,password,role) VALUES
-    ('Parent','parent@test.com','parent123','parent'),
-    ('Driver','driver@test.com','driver123','driver'),
-    ('Admin','admin@test.com','admin123','admin')
+    INSERT IGNORE INTO users (name,email,loginMethod,role,userType)
+    VALUES
+    ('Parent','parent@test.com','dev-login','parent','parent'),
+    ('Driver','driver@test.com','dev-login','driver','driver'),
+    ('Admin','admin@test.com','dev-login','admin','admin')
   `);
 
   console.log("Demo users seeded");
